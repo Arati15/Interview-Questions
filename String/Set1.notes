@@ -1,0 +1,18 @@
+
+1. Implement an algorithm to determine if a string has all unique characters. What if you cannot use additional data structures?
+    
+2. Given two strings, write a method to decide if one is a permutation of the other?
+   
+3. Write a method to replace all spaces in a string with ‘%20’.
+    
+4. Implement a method to perform a basic string compression using the counts of repeated characters. 
+For example, the string aabccccaaa would become a2b1c4a3. If the compressed string would not become smaller than the original string,
+ your method should return the original string.
+   
+5. Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column are set to 0.
+   
+6. Given two sequences, print longest common subsequence
+
+    LCS for input Sequences “ABCDGH” and “AEDFHR” is “ADH” of length 3.
+
+    LCS for input Sequences “AGGTAB” and “GXTXAYB” is “GTAB” of length 4.

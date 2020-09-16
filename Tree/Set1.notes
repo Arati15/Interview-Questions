@@ -1,0 +1,10 @@
+
+   1. Given a BST, create a linkedlist of all the nodes at each depth
+    
+    2. Convert a BST into a doubly linkedlist.
+
+    3. Determine if a binary tree is balanced
+
+   4 . Given a sorted array, create a binary search tree with minimal height
+   
+   5. Implement a function to check if a binary tree is a BST

@@ -1,0 +1,18 @@
+
+    1. Write an algorithm to determine if a linkedlist is a palindrome
+    
+    2. Write an algorithm to determine if a linkedlist is circular. FOLLOW UP: Determine where the circle meets.
+    
+    3. Clone a linked list with a random pointer.
+    
+    4. Write code to remove duplicates from an unsorted linked list. Follow up: How would you solve it if temporary buffer is not allowed?
+    
+    5. Implement an algorithm to find the kth to the last element of a singly linked list
+    
+    6. Implement an algorithm to delete a node a singly linked list, given only access to that node.
+   
+   7.  Write code to partition a linkedlist around a value x, such that all nodes less than x come before all nodes great than or equal to x. 
+    
+    8. Reverse a linked list – iteratively and recursively
+
+    9. Given a singly linked list which has data sorted in ascending order, construct a balanced BST.
