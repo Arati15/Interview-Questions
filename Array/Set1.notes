@@ -73,6 +73,7 @@ private int getElementAppearedOnce(int arr[], int start, int end) {
 ANSWER : Binary search TC : O(log n)
 a [] = {-1, 0,2,4,5 }                  o/p : 2
 
+//java
 public static int MagicIndex(int[] arr, int low, int high) {
     if (high >= low){
         int mid = (low + high) / 2;
@@ -86,6 +87,22 @@ public static int MagicIndex(int[] arr, int low, int high) {
     return -1;
 }
 
+//javaScript with o(n)
+
+Array.prototype.magicIndex = function() {
+  var magicindex = [];
+  for (var i = 0; i < this.length; i++ ) {
+    if(i === this[i]) {
+      magicindex.push(i);
+    }
+  }
+
+  return magicindex;
+};
+
+[-1,0,2,4,5].magicIndex();
+// 2
+
 
 
     
@@ -95,6 +112,19 @@ ANSWER :
 
 if array is unsorted then use linear search with o(n)time complexity to fine that element but here use binary search with o(log n)
 
+//javaScript o (n)
+
+Array.prototype.search = function(ele) {
+  for(var i = 0; i < this.length; i++) {
+    if (ele === this[i]) {
+      return {index: i, value: this[i]};
+    }
+  }
+}
+
+[1, 2, 3, 4].search(2);
+
+//java
 public static int findElement(int[] arr, int low, int high, int key){
     if (low > high) {
         return -1;
@@ -125,11 +155,110 @@ public static int findElement(int[] arr, int low, int high, int key){
 
 4. Given an array that contains numbers from 1 to n-1 and exactly 1 duplicate, find that duplicate.
 
+ANSWER : o(n)
+a [] = {8,2,6,1,2,3}      o/p : 2
+
+//javaScript
+Array.prototype.duplicate = function() {
+  var sum = 0;
+  for(var i = 0; i < this.length; i++) {
+    sum += this[i] - i;
+  }
+  return sum;
+};
+
+[2,1,5,4,2,3].duplicate();
+
+//java o(n)
+
+int findElement(int a [], int n)
+{
+    Hashset <INTEGER> s = new Hashset <INTEGER>
+    for(int i = 0; i < n; i++)
+    {
+        if(s.contains(a[i]))
+        {
+            return a [i];
+        }
+        s.add(a[i]);
+    }
+    return -1;
+}
+
+
+
 5.Search an element in an array where difference between adjacent elements is 1.
 
     For example: arr[] = {8, 7, 6, 7, 6, 5, 4, 3, 2, 3, 4, 3}
 
     Search for 3 and Output: Found at index 7
 
+    //javaScript with o(n)
+
+    Array.prototype.adjacOne = function(ele) {
+  for(var i = 0; i < this.length; i++) {
+    if(this[i] === ele && Math.abs(this[i-1] - ele) === 1) {
+      if((i + 1) === this.length) {
+        return i;
+      }
+      if(Math.abs(this[i+1] - ele) === 1) {
+        return i;        
+      }
+    }
+  }
+};
+
+[0,1,2,1,2,3].adjacOne(3);
+// 5
+
+//java o(n)
+
+static int search(int arr[], int n, int x) 
+    { 
+          
+        // Traverse the given array starting  
+        // from leftmost element 
+        int i = 0; 
+        while (i < n) 
+        { 
+              
+            // If x is found at index i 
+            if (arr[i] == x) 
+                return i; 
+      
+            // Jump the difference between current 
+            // array element and x 
+            i = i + Math.abs(arr[i]-x); 
+        } 
+      
+        System.out.println ("number is not" + 
+                                     " present!"); 
+  
+        return -1; 
+    } 
+
+
+
 6. Given an array of numbers, split the array into two where one array contains the sum of n-1 numbers 
 and the other array with all the n-1 elements.
+
+ANSWER :
+//javaScript  o(2n)
+
+
+Array.prototype.sumElement = function() {
+  var sum = 0;
+  for(var i = 0; i < this.length; i++) {
+    sum += this[i];
+  }
+  var element = sum / 2;
+
+  for(var i = 0; i < this.length; i++) {
+    if(this[i] === element) {
+      return element;
+    }
+  }
+};
+[6,3,4,13].sumElement();
+// 13
+
