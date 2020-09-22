@@ -86,12 +86,42 @@ public static int MagicIndex(int[] arr, int low, int high) {
     return -1;
 }
 
-if array is unsorted then use linear search with o(n)time complexity
+
 
     
 3. Given a sorted array of n integers that has been rotated an unknown number of times, write code to find an element in the array. You may assume that the array was originally sorted in increasing order.
 
 ANSWER : 
+
+if array is unsorted then use linear search with o(n)time complexity to fine that element but here use binary search with o(log n)
+
+public static int findElement(int[] arr, int low, int high, int key){
+    if (low > high) {
+        return -1;
+    }
+
+    int mid = (low + high) / 2;
+
+    if (arr[mid] == key) {
+        return mid;
+    }
+
+    if (arr[low] <= arr[mid]) { // sorted array on the left side?
+        if (key >= arr[low] && key <= arr[mid])
+        {
+            return findElement(arr, low, mid - 1, key);
+        }
+        else
+            return findElement(arr, mid + 1, high, key);
+    }
+
+    if (key >= arr[mid] && key <= arr[high])
+    {
+        return findElement(arr, mid + 1, high, key);
+    }
+    else
+        return findElement(arr, low, mid - 1, key);
+}
 
 4. Given an array that contains numbers from 1 to n-1 and exactly 1 duplicate, find that duplicate.
 
