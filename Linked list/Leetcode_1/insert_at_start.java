@@ -5,7 +5,7 @@
 //fuction insert data at first 
 
 //Time complexity = o(n)
-    void start (Node head){
+    void start (Node head, int data){
         Node temp = new Node(data);
 
         if (head == null)
